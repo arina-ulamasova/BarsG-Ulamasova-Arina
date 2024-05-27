@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1addEventListener</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <h1 class="text-left">1. Создайте страницу с несколькими кнопками. Каждая кнопка должна выводить в консоль сообщение о том, что она была нажата.
+            Требования:
+            - Использовать метод addEventListener для привязки обработчиков событий.
+            - Каждая кнопка должна иметь уникальное сообщение.
+            </h1>
+        <a href="2.html" class="btn btn-info">След задание</a>
+      </div>
+
+
+    <div class="chat-container">
+        <div class="messages" id="chatMessages"></div>
+        <div class="buttons">
+            <button class="btn btn-info" id="fButton">Флирт</button>
+            <button class="btn btn-info" id="jButton">Пошутить</button>
+            <button class="btn btn-info" id="rButton">Нагрубить</button>
+        </div>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const chatMessages = document.getElementById('chatMessages');
+        const addMessage = (message, sender) => {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            messageDiv.textContent = message;
+            chatMessages.prepend(messageDiv); 
+            console.log(message); // в консоль тож выводит пон
+        };
+        const botResponses = {
+            f: 'Всегда об этом мечтала', j: 'Круче Христа', r: ':('
+        };
+
+        const handleButtonClick = (message, type) => {
+            addMessage(message, 'user')
+            addMessage(botResponses[type], 'bot');
+        };
+
+        document.getElementById('fButton').addEventListener('click', () => handleButtonClick('Напишешь мне сайт за чашку кофе?', 'f'));
+        document.getElementById('jButton').addEventListener('click', () => handleButtonClick('Программист это человек, который превращает кофеин в код', 'j'));
+        document.getElementById('rButton').addEventListener('click', () => handleButtonClick('Нейросети заменят всех', 'r'));
+    });
+</script>
+</body>
+</html>

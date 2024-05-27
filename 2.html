@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1addEventListener</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <h1 class="text-left">2. Создайте страницу с кнопкой, которая при нажатии меняет цвет фона страницы на случайный цвет.
+            Требования:
+            - Использовать событие click.
+            - Цвет должен генерироваться случайным образом.
+            </h1>
+        <a href="3.html" class="btn btn-info">След задание</a>
+      </div>
+
+
+        <div class="buttons">
+            <button class="btn btn-info" id="fButton">*Тыкать быстро для дискотеки*</button>
+        </div>
+    </div>
+
+<script>
+    var button = document.getElementById('fButton');
+    button.addEventListener('click', function() {
+
+        var red = Math.floor(Math.random() * 256);
+        var green = Math.floor(Math.random() * 256);
+        var blue = Math.floor(Math.random() * 256);
+        var randomColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+
+        document.body.style.backgroundColor = randomColor;
+    });
+</script>
+</body>
+</html>

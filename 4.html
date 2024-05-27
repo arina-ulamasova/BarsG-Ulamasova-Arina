@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Code</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <h1 class="text-left">4. Создайте страницу, которая реагирует на ввод определенного набора клавиш (например, секретного кода). При правильном вводе отображается скрытое сообщение.
+            Требования:
+            - Использовать событие keydown.
+            - Хранить последовательность введенных клавиш и сравнивать с заданным кодом.
+        </h1>
+    </div>
+
+    <style>
+        .button {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+
+    <h1>Code: 78952</h1>
+    <div id="code"></div>
+    <div id="message"></div>
+
+    <script>
+        var code = '';
+        var correct= '78952';
+
+        document.addEventListener('keydown', function(event) {
+            var keyPressed = event.key;
+            code += keyPressed;
+            document.getElementById('code').innerText = code;
+            if (code === correct) {
+                document.getElementById('message').innerText = 'Почему у хороших программистов нет друзей? Не знаю, у меня их полно';
+            }
+        });
+    </script>
+</body>
+</html>

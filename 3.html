@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1addEventListener</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <h1 class="text-left">3. Создайте список элементов &lt;ul&gt;, содержащий несколько &lt;li&gt;. Добавьте обработчик события на &lt;ul&gt;, который будет выводить в консоль текст элемента &lt;li&gt;, по которому был выполнен клик.
+            Требования:
+            - Использовать всплытие.
+            - Обработчик должен быть привязан к родительскому элементу &lt;ul&gt;.
+            </h1>
+        <a href="4.html" class="btn btn-info">След задание</a>
+      </div>
+
+<ul id="myList">
+  <li>кот</li>
+  <li>cat</li>
+  <li>кошара</li>
+  <li>кiшка</li>
+  <li>лээ мешок волосатый</li>
+</ul>
+
+<script>
+var ul = document.getElementById("myList");
+
+ul.addEventListener("click", function(event) {
+  if (event.target.tagName === 'LI') {
+    alert(event.target.textContent);
+  }
+});
+</script>
+
+</body>
+</html>
