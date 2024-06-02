@@ -1,0 +1,16 @@
+.completed {
+    text-decoration: line-through;
+}
+.custom-link {
+    color: black;
+}
+.custom-link:visited {
+    color: gray;
+}
+.custom-link:hover {
+    color: green;
+    text-decoration: underline;
+}
+.custom-link:active {
+    color: blue;
+}
