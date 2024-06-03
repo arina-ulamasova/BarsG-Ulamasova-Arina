@@ -2,7 +2,6 @@ const taskInput = document.getElementById('taskInput');
 const addTaskButton = document.getElementById('addTaskButton');
 const taskList = document.getElementById('taskList');
 
-// Функция добавления задачи
 function addTask() {
     const taskText = taskInput.value.trim();
     if (taskText === '') return;
@@ -33,10 +32,8 @@ function addTask() {
     addTaskButton.disabled = true;
 }
 
-// Событие для кнопки "Добавить"
 addTaskButton.addEventListener('click', addTask);
 
-// Событие для поля ввода
 taskInput.addEventListener('input', function () {
     addTaskButton.disabled = taskInput.value.trim() === '';
 });
